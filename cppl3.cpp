@@ -65,4 +65,11 @@ void appendingStrings()
     std::cout << a << std::endl;
 }
 
+void nameLenght()
+{
+    std::string myName{ "Paul" };
+    std::cout << myName << " has " << myName.length() << " charactors \n";
+}
+
+
 

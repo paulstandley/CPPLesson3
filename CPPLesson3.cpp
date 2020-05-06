@@ -10,7 +10,7 @@
 
 int main()
 {
-    appendingStrings();
+    nameLenght();
 
     return 0;
 }

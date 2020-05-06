@@ -5,6 +5,7 @@ void getNameAndAgeCIN();
 void getNameAndAgeGetinline();
 void cinValueAlsoCapturesNewline();
 void appendingStrings();
+void nameLenght();
 
 
 
