@@ -3,10 +3,29 @@
 
 #include "pch.h"
 #include <iostream>
+#include <string>
+
+
+void getNameAndAge()
+{
+    std::cout << "Enter full Name: ";
+    std::string name{};
+    std::cin >> name;// cin brakes on whitespaces
+
+    std::cout << "Enter your age: ";
+    std::string age{};
+    std::cin >> age;// so age is the last name
+
+    std::cout << "Your name is " << name << " and your age is " << age << std::endl;
+
+}
 
 int main()
 {
-    std::cout << "Hello World!\n";
+
+    getNameAndAge();
+
+    return 0;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
