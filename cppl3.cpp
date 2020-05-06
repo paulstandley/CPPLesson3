@@ -55,3 +55,14 @@ void cinValueAlsoCapturesNewline()
     std::cout << "Hello, " << name << ", you picked " << choise << std::endl;
 }
 
+void appendingStrings()
+{
+    std::string a{ "45" };
+    std::string b{ "11" };
+
+    std::cout << a + b << std::endl;
+    a += " volts";
+    std::cout << a << std::endl;
+}
+
+

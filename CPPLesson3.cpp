@@ -10,7 +10,7 @@
 
 int main()
 {
-    cinValueAlsoCapturesNewline();
+    appendingStrings();
 
     return 0;
 }
