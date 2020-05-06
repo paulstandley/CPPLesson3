@@ -6,7 +6,7 @@
 #include <string>
 
 
-void getNameAndAge()
+void getNameAndAgeCIN()
 {
     std::cout << "Enter full Name: ";
     std::string name{};
@@ -17,13 +17,25 @@ void getNameAndAge()
     std::cin >> age;// so age is the last name
 
     std::cout << "Your name is " << name << " and your age is " << age << std::endl;
+}
 
+void getNameAndAgeGetinline()
+{
+    std::cout << "Enter full name: ";
+    std::string name{};
+    std::getline(std::cin, name);//read a full line of text
+
+    std::cout << "Enter your age: ";
+    std::string age{};
+    std::getline(std::cin, age);
+
+    std::cout << "Your name is " << name << " your age is " << age << std::endl;
 }
 
 int main()
 {
 
-    getNameAndAge();
+    getNameAndAgeGetinline();
 
     return 0;
 }
