@@ -71,5 +71,40 @@ void nameLenght()
     std::cout << myName << " has " << myName.length() << " charactors \n";
 }
 
+void years_for_each_letter_in_your_name()
+{
+    std::cout << "Enter your full name: ";
+    std::string name{};
+    std::getline(std::cin, name);
+
+    std::cout << "Enter your age: ";
+    double age{};
+    std::cin >> age;
+
+    double name_length{ static_cast<double>(name.length()) };
+
+    double value{ age / name_length };
+
+    std::cout << "You have lived " << value << " years for each letter in your name." << std::endl;
+}
+
+void use_erase()
+{
+    std::string str{ "The rice is cooking" };
+
+    str.erase(4, 11);// "The king"
+
+    std::cout << str << '\n';
+}
+
+void use_replace()
+{
+    std::string str{ "I saw a red car yesterday." };
+
+    str.replace(8, 3, "blue");
+
+    std::cout << str << '\n'; // I saw a blue car yesterday.
+}
+
 
 
