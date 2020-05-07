@@ -6,11 +6,32 @@
 #include <string>
 #include "CPPLesson3.h"
 
+/*Write a program that asks the user to enter their full name and their age. 
+As output, tell the user how many years they’ve lived for each letter in 
+their name (for simplicity, count spaces as a letter).*/
 
+
+void years_for_each_letter_in_your_name()
+{
+    std::cout << "Enter your full name: ";
+    std::string name{};
+    std::getline(std::cin, name);
+
+    std::cout << "Enter your age: ";
+    double age{};
+    std::cin >> age;
+
+    double name_length{ static_cast<double>(name.length()) };
+
+    double value{ age / name_length };
+
+    std::cout << "You have lived " << value << " years for each letter in your name." << std::endl;
+
+}
 
 int main()
 {
-    nameLenght();
+    years_for_each_letter_in_your_name();
 
     return 0;
 }
