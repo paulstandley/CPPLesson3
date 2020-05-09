@@ -13,9 +13,12 @@ void use_replace();
 
 void enumerator_scope();
 void enumerator_values();
-
 void enum_uses_case();
 void enum_class();
+
+void accessing_struct_members();
+
+
 
 
 #endif // CPPLESSON3_H

@@ -216,3 +216,45 @@ void enum_class()
         std::cout << "The color is blue. Its int value is " << static_cast<int>(color) << '\n';
 }
 
+void accessing_struct_members()
+{
+    struct Employee
+    {
+        short id;
+        int age;
+        double wage;
+    };
+
+    Employee joe;
+    joe.id = 21;
+    joe.age = 68;
+    joe.wage = 514.53;
+
+    Employee frank;
+    frank.id = 23;
+    frank.age = 2;
+    frank.wage = 409.60;
+
+    frank.wage += 10.40;
+
+    ++joe.age;
+
+    int totalAge{ joe.age + frank.age };
+
+    if (joe.wage > frank.wage)
+    {
+        std::cout << "Joe " << joe.age << " makes more thank frank\n";
+    }
+    else if (joe.wage < frank.wage)
+    {
+        std::cout << "Joe make less than Frank\n";
+    }
+    else
+    {
+        std::cout << "Joe and frank make the same\n";
+    }
+}
+
+
+
+

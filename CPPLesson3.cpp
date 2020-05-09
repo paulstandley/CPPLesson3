@@ -6,49 +6,43 @@
 #include <string>
 #include "CPPLesson3.h"
 
-void accessing_struct_members()
+
+
+namespace Initializing_structs
 {
-    struct Employee
+    struct Employee_1
     {
         short id;
         int age;
         double wage;
     };
 
-    Employee joe;
-    joe.id = 21;
-    joe.age = 68;
-    joe.wage = 514.53;
-
-    Employee frank;
-    frank.id = 23;
-    frank.age = 2;
-    frank.wage = 409.60;
-
-    frank.wage += 10.40;
-
-    ++joe.age;
-
-    int totalAge{ joe.age + frank.age };
-
-    if (joe.wage > frank.wage)
+    void printImformation(Employee_1 employee)
     {
-        std::cout << "Joe "<< joe.age <<" makes more thank frank\n";
+        std::cout << "ID:   " << employee.id << '\n';
+        std::cout << "Age:  " << employee.age << '\n';
+        std::cout << "Wgae: " << employee.wage << '\n';
     }
-    else if (joe.wage < frank.wage)
-    {
-        std::cout << "Joe make less than Frank\n";
-    }
-    else
-    {
-        std::cout << "Joe and frank make the same\n";
-    }
+
+}
+
+void print_initializing_structs()
+{
+    //Initializing structs
+    Initializing_structs::Employee_1 joe{ 14, 32, 24.15 };
+    Initializing_structs::Employee_1 frank{ 15, 28, 18.27 };
+
+    // Print infomation
+    Initializing_structs::printImformation(joe);
+    std::cout << '\n';
+    Initializing_structs::printImformation(frank);
+
 }
 
 int main()
 {
-
-    accessing_struct_members();
+ 
+    print_initializing_structs();
 
     return 0;
 }
