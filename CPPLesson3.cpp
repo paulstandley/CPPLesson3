@@ -6,74 +6,31 @@
 #include <string>
 #include "CPPLesson3.h"
 
-/*Write a program that asks the user to enter their full name and their age. 
-As output, tell the user how many years they’ve lived for each letter in 
-their name (for simplicity, count spaces as a letter).*/
-
-void define_enum()
+enum ItemType
 {
-    // Define a new enumeration named Color
-    enum Color
-    {
-        // Here are the enumerators
-        // These define all the possible values this type can hold
-        // Each enumerator is separated by a comma, not a semicolon
-        COLOR_BLACK,
-        COLOR_RED,
-        COLOR_BLUE,
-        COLOR_GREEN,
-        COLOR_WHITE,
-        COLOR_CYAN,
-        COLOR_YELLOW,
-        COLOR_MAGENTA, // see note about trailing comma on the last enumerator below
-    }; // however the enum itself must end with a semicolon
+    ITEMTYPE_SWORD,
+    ITEMTYPE_TORCH,
+    ITENTYPE_POTION
+};
 
-    // Define a few variables of enumerated type Color
-    Color paint = COLOR_WHITE;
-    Color house(COLOR_BLUE);
-    Color apple{ COLOR_RED };
-}
-
-void enumerator_scope()
+std::string getItemName(ItemType itemType)
 {
-    enum Color
-    {
-        RED,
-        BLUE, // BLUE is put into the enumerator_scope namespace
-        GREEN
-    };
+    if (itemType == ITEMTYPE_SWORD)
+        return "Sword";
+    if (itemType == ITEMTYPE_TORCH)
+        return "Torch";
+    if (itemType == ITENTYPE_POTION)
+        return "Potion";
 
-    enum Feeling
-    {
-        HAPPY,
-        TIRED,
-        BLUE // error, BLUE was already used in enum Color in the enumerator_scope namespace
-    };
-    /*Consequently, it’s common to prefix enumerators with a standard prefix like ANIMAL_ or COLOR_, 
-    both to prevent naming conflicts and for code documentation purposes*/
+    return "Hay";
 }
-
-void enumerator_values()
-{
-    // define a new enum named Animal
-    enum Animal
-    {
-        ANIMAL_CAT = -3,
-        ANIMAL_DOG, // assigned -2
-        ANIMAL_PIG, // assigned -1
-        ANIMAL_HORSE = 5,
-        ANIMAL_GIRAFFE = 5, // shares same value as ANIMAL_HORSE
-        ANIMAL_CHICKEN // assigned 6
-    };
-    // Don’t assign specific values to your enumerators.
-    // Don’t assign the same value to two enumerators in the same enumeration unless there’s a very good reason.
-}
-
 
 
 int main()
 {
+    ItemType itemtype = ITEMTYPE_SWORD;
 
+    std::cout << "You are carring a " << getItemName(itemtype) << '\n';
 
     return 0;
 }
