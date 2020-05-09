@@ -6,22 +6,49 @@
 #include <string>
 #include "CPPLesson3.h"
 
+void accessing_struct_members()
+{
+    struct Employee
+    {
+        short id;
+        int age;
+        double wage;
+    };
 
+    Employee joe;
+    joe.id = 21;
+    joe.age = 68;
+    joe.wage = 514.53;
+
+    Employee frank;
+    frank.id = 23;
+    frank.age = 2;
+    frank.wage = 409.60;
+
+    frank.wage += 10.40;
+
+    ++joe.age;
+
+    int totalAge{ joe.age + frank.age };
+
+    if (joe.wage > frank.wage)
+    {
+        std::cout << "Joe "<< joe.age <<" makes more thank frank\n";
+    }
+    else if (joe.wage < frank.wage)
+    {
+        std::cout << "Joe make less than Frank\n";
+    }
+    else
+    {
+        std::cout << "Joe and frank make the same\n";
+    }
+}
 
 int main()
 {
-    enum class Color
-    {
-        red,
-        blue
-    };
 
-    Color color{ Color::red };
-
-    if (color == Color::red)
-        std::cout << "The color is red. Its int value is " << static_cast<int>(color) << '\n';
-    else if (color == Color::blue)
-        std::cout << "The color is blue. Its int value is " << static_cast<int>(color) << '\n';
+    accessing_struct_members();
 
     return 0;
 }

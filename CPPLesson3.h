@@ -15,6 +15,7 @@ void enumerator_scope();
 void enumerator_values();
 
 void enum_uses_case();
+void enum_class();
 
 
 #endif // CPPLESSON3_H

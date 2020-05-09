@@ -200,5 +200,19 @@ void enum_uses_case()
     */
 }
 
+void enum_class()
+{
+    enum class Color
+    {
+        red,
+        blue
+    };
 
+    Color color{ Color::red };
+
+    if (color == Color::red)
+        std::cout << "The color is red. Its int value is " << static_cast<int>(color) << '\n';
+    else if (color == Color::blue)
+        std::cout << "The color is blue. Its int value is " << static_cast<int>(color) << '\n';
+}
 
