@@ -6,31 +6,22 @@
 #include <string>
 #include "CPPLesson3.h"
 
-enum ItemType
-{
-    ITEMTYPE_SWORD,
-    ITEMTYPE_TORCH,
-    ITENTYPE_POTION
-};
-
-std::string getItemName(ItemType itemType)
-{
-    if (itemType == ITEMTYPE_SWORD)
-        return "Sword";
-    if (itemType == ITEMTYPE_TORCH)
-        return "Torch";
-    if (itemType == ITENTYPE_POTION)
-        return "Potion";
-
-    return "Hay";
-}
 
 
 int main()
 {
-    ItemType itemtype = ITEMTYPE_SWORD;
+    enum class Color
+    {
+        red,
+        blue
+    };
 
-    std::cout << "You are carring a " << getItemName(itemtype) << '\n';
+    Color color{ Color::red };
+
+    if (color == Color::red)
+        std::cout << "The color is red. Its int value is " << static_cast<int>(color) << '\n';
+    else if (color == Color::blue)
+        std::cout << "The color is blue. Its int value is " << static_cast<int>(color) << '\n';
 
     return 0;
 }

@@ -14,5 +14,7 @@ void use_replace();
 void enumerator_scope();
 void enumerator_values();
 
+void enum_uses_case();
+
 
 #endif // CPPLESSON3_H

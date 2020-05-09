@@ -172,3 +172,33 @@ void enumerator_values()
 }
 
 
+void enum_uses_case()
+{
+    /*
+    enum ItemType
+    {
+        ITEMTYPE_SWORD,
+        ITEMTYPE_TORCH,
+        ITENTYPE_POTION
+    };
+
+    std::string getItemName(ItemType itemType)
+    {
+        if (itemType == ITEMTYPE_SWORD)
+            return "Sword";
+        if (itemType == ITEMTYPE_TORCH)
+            return "Torch";
+        if (itemType == ITENTYPE_POTION)
+            return "Potion";
+
+        return "Hay";
+    }
+        ItemType itemtype = ITEMTYPE_SWORD;
+
+        std::cout << "You are carring a " << getItemName(itemtype) << '\n';
+
+    */
+}
+
+
+
