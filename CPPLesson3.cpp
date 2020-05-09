@@ -7,42 +7,45 @@
 #include "CPPLesson3.h"
 
 
-
-namespace Initializing_structs
+struct Point3d
 {
-    struct Employee_1
-    {
-        short id;
-        int age;
-        double wage;
-    };
+    double x;
+    double y;
+    double z;
+};
 
-    void printImformation(Employee_1 employee)
-    {
-        std::cout << "ID:   " << employee.id << '\n';
-        std::cout << "Age:  " << employee.age << '\n';
-        std::cout << "Wgae: " << employee.wage << '\n';
-    }
-
+Point3d getZeroPoint()
+{
+    // We can create a variable and return the variable.
+    Point3d temp{ 0.0, 0.0, 0.0 };
+    return temp;
 }
 
-void print_initializing_structs()
+Point3d getZeroPoint2()
 {
-    //Initializing structs
-    Initializing_structs::Employee_1 joe{ 14, 32, 24.15 };
-    Initializing_structs::Employee_1 frank{ 15, 28, 18.27 };
-
-    // Print infomation
-    Initializing_structs::printImformation(joe);
-    std::cout << '\n';
-    Initializing_structs::printImformation(frank);
-
+    // We can return directly. We already specified the type
+    // at the function declaration (Point3d), so we don't need
+    // it again here.
+    return { 0.0, 0.0, 0.0 };
 }
+
+Point3d getZeroPoint3()
+{
+    // We can use empty curly braces to zero-initialize all
+    // members of `Point3d`.
+    return {};
+}
+
 
 int main()
 {
  
-    print_initializing_structs();
+    Point3d zero{ getZeroPoint() };
+
+    if (zero.x == 0.0 && zero.y == 0.0 && zero.z == 0.0)
+        std::cout << "The point is zero\n";
+    else
+        std::cout << "The point is not zero\n";
 
     return 0;
 }

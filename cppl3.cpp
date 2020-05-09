@@ -255,6 +255,37 @@ void accessing_struct_members()
     }
 }
 
+/*
+namespace Initializing_structs
+{
+    struct Employee_1
+    {
+        short id;
+        int age;
+        double wage;
+    };
 
+    void printImformation(Employee_1 employee)
+    {
+        std::cout << "ID:   " << employee.id << '\n';
+        std::cout << "Age:  " << employee.age << '\n';
+        std::cout << "Wgae: " << employee.wage << '\n';
+    }
+
+}
+
+void print_initializing_structs()
+{
+    //Initializing structs
+    Initializing_structs::Employee_1 joe{ 14, 32, 24.15 };
+    Initializing_structs::Employee_1 frank{ 15, 28, 18.27 };
+
+    // Print infomation
+    Initializing_structs::printImformation(joe);
+    std::cout << '\n';
+    Initializing_structs::printImformation(frank);
+
+}
+*/
 
 
