@@ -17,7 +17,7 @@ void enum_uses_case();
 void enum_class();
 
 void accessing_struct_members();
-
+void structsand_functions();
 
 
 

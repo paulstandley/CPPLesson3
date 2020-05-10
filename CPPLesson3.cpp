@@ -7,45 +7,51 @@
 #include "CPPLesson3.h"
 
 
-struct Point3d
+/*
+1) You are running a website, and you are trying to keep track of how much money you make 
+per day from advertising. Declare an advertising struct that keeps track of how many ads 
+you’ve shown to readers, what percentage of ads were clicked on by users, and how much you 
+earned on average from each ad that was clicked. Read in values for each of these fields 
+from the user. Pass the advertising struct to a function that prints each of the values,
+and then calculates how much you made for that day (multiply all 3 fields together).
+*/
+
+struct Advertising_money
 {
-    double x;
-    double y;
-    double z;
+    double ads_shown_to_readers;
+    double percentage_ads_clicked;
+    double average_of_each_clicked;
 };
 
-Point3d getZeroPoint()
+double read_value_user()
 {
-    // We can create a variable and return the variable.
-    Point3d temp{ 0.0, 0.0, 0.0 };
-    return temp;
+    std::cout << "Enter value ";
+    double value{};
+    std::cin >> value;
+    return value;
 }
 
-Point3d getZeroPoint2()
+void prints_each_values_calculate(Advertising_money advertising_money)
 {
-    // We can return directly. We already specified the type
-    // at the function declaration (Point3d), so we don't need
-    // it again here.
-    return { 0.0, 0.0, 0.0 };
-}
-
-Point3d getZeroPoint3()
-{
-    // We can use empty curly braces to zero-initialize all
-    // members of `Point3d`.
-    return {};
+    std::cout << "ads_shown_to_readers " << advertising_money.ads_shown_to_readers << '\n';
+    std::cout << "average_of_each_clicked " << advertising_money.average_of_each_clicked << '\n';
+    std::cout << "percentage_ads_clicked " << advertising_money.percentage_ads_clicked << '\n';
+    std::cout << "total for day " <<
+        ((advertising_money.ads_shown_to_readers * advertising_money.average_of_each_clicked 
+            / 100 * advertising_money.percentage_ads_clicked));
 }
 
 
 int main()
 {
- 
-    Point3d zero{ getZeroPoint() };
+    Advertising_money advertising_money{};
 
-    if (zero.x == 0.0 && zero.y == 0.0 && zero.z == 0.0)
-        std::cout << "The point is zero\n";
-    else
-        std::cout << "The point is not zero\n";
+    advertising_money.ads_shown_to_readers = read_value_user();
+    advertising_money.average_of_each_clicked = read_value_user();
+    advertising_money.percentage_ads_clicked = read_value_user();
+
+    prints_each_values_calculate(advertising_money);
+    
 
     return 0;
 }
