@@ -19,6 +19,10 @@ void enum_class();
 void accessing_struct_members();
 void structsand_functions();
 
+void multiply(Fraction f1, Fraction f2);
+void print_data();
+
+
 
 
 #endif // CPPLESSON3_H

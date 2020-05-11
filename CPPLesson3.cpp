@@ -6,51 +6,49 @@
 #include <string>
 #include "CPPLesson3.h"
 
-
 /*
-1) You are running a website, and you are trying to keep track of how much money you make 
-per day from advertising. Declare an advertising struct that keeps track of how many ads 
-you’ve shown to readers, what percentage of ads were clicked on by users, and how much you 
-earned on average from each ad that was clicked. Read in values for each of these fields 
-from the user. Pass the advertising struct to a function that prints each of the values,
-and then calculates how much you made for that day (multiply all 3 fields together).
+2) Create a struct to hold a fraction. The struct should have an integer numerator 
+and an integer denominator member. 
+Declare 2 fraction variables and read them in from the user. 
+Write a function called multiply that takes both fractions, multiplies them together, 
+and prints the result out as a decimal number. 
+You do not need to reduce the fraction to its lowest terms.
 */
 
-struct Advertising_money
+struct Fraction
 {
-    double ads_shown_to_readers;
-    double percentage_ads_clicked;
-    double average_of_each_clicked;
+    int numerator;
+    int denominator;
 };
-
-double read_value_user()
+ 
+Fraction user_input()
 {
-    std::cout << "Enter value ";
-    double value{};
-    std::cin >> value;
-    return value;
+    Fraction fraction;
+    std::cout << "Enter a numarator:   ";
+    std::cin >> fraction.numerator;
+    std::cout << "Enter a denominator: ";
+    std::cin >> fraction.denominator;
+    std::cout << '\n';
+    return fraction;
 }
 
-void prints_each_values_calculate(Advertising_money advertising_money)
+void multiply(Fraction f1, Fraction f2)
 {
-    std::cout << "ads_shown_to_readers " << advertising_money.ads_shown_to_readers << '\n';
-    std::cout << "average_of_each_clicked " << advertising_money.average_of_each_clicked << '\n';
-    std::cout << "percentage_ads_clicked " << advertising_money.percentage_ads_clicked << '\n';
-    std::cout << "total for day " <<
-        ((advertising_money.ads_shown_to_readers * advertising_money.average_of_each_clicked 
-            / 100 * advertising_money.percentage_ads_clicked));
+    std::cout << static_cast<double>(
+        (f1.numerator * f2.numerator) / (f1.denominator * f2.denominator)
+        ) << '\n';
 }
 
+void print_data()
+{
+    Fraction f1{ user_input() };
+    Fraction f2{ user_input() };
+    multiply(f1, f2);
+}
 
 int main()
 {
-    Advertising_money advertising_money{};
-
-    advertising_money.ads_shown_to_readers = read_value_user();
-    advertising_money.average_of_each_clicked = read_value_user();
-    advertising_money.percentage_ads_clicked = read_value_user();
-
-    prints_each_values_calculate(advertising_money);
+    print_data();
     
 
     return 0;
